@@ -22,7 +22,7 @@ def lifes(word, letter, number_of_trys):
 def convert_to_string(lista):
     lista_string = ""
     for i in range(0, len(lista)):
-        lista_string += lista[i]
+        lista_string += lista[i] + " "
     return lista_string
 
 
