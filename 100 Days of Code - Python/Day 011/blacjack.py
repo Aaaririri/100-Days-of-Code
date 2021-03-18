@@ -2,7 +2,9 @@ import random
 import os
 from time import sleep
 from art import logo
-
+"""
+should be blackjack but i made it closer to brazilian's 21 than actual blackjack
+"""
 # The screen clear function
 def screen_clear():
    # for mac and linux(here, os.name is 'posix')
