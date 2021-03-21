@@ -31,11 +31,12 @@ resources = {
     "coffee": 100,
 }
 
-def continue_oparations():
-    to_continue = True
-    if input("To turn 'off' click 'o' or 'r' for 'restart': ") == 'o':
-        to_continue = False
-    return to_continue
+def resume(drink):
+    ingredients = MENU[drink]["ingredients"]
+    cost = MENU[drink]["cost"]
+    for name, amount in ingredients.items():
+        print(f"{name} : {amount}")
+    print(f"cost : {cost}")
 
 def make(drink):
     ingredients = MENU[drink]["ingredients"]
@@ -50,10 +51,18 @@ def drink_ingredients(drink):
             return False
     return True
 
+def process_coins():
+    print("Please insert coins.")
+    total = int(input("how many quarters?: ")) * 0.25
+    total += int(input("how many dimes?: ")) * 0.1
+    total += int(input("how many nickles?: ")) * 0.05
+    total += int(input("how many pennies?: ")) * 0.01
+    return total
+
 
 def payment(drink):
     try:
-        value = float(input("Insert your coins: "))
+        value = process_coins()
         drinks_value = MENU[drink]["cost"]
         if drinks_value <= value:
             print(f"Your change is $ { value - drinks_value}")
@@ -66,28 +75,31 @@ def payment(drink):
         
 
 
-def drink_choice(choice = True):
+def drink_choice(choice):
     if choice:
         drink = input("What would you like? (espresso/latte/cappuccino): ")
         if drink  == 'espresso' or drink == 'latte' or drink == 'cappuccino':
+            resume(drink)
             drink_payment = payment(drink)
             if drink_payment:
                 drink_possible = drink_ingredients(drink)
                 if drink_possible:
                     make(drink)
                     print("Here is your drink, have a nice day!")
-                    if input("Do you want another drink 'y' or 'n': ") == 'y':
-                        drink_choice()
                 else:
                     print("There is not enought resources ate the coffe machine")
-                    drink_choice(continue_oparations())
+                    
             else:
                 print("You did not pay for the drink")
-                drink_choice(continue_oparations())
+                
         else:
             print("Invalid choice")
-            drink_choice(continue_oparations())
+        if input("Do you want another drink 'y' or 'n': ") == 'y':
+            drink_choice(True)
+        else:
+            drink_choice(False)
+    
 
     
 
-drink_choice()
+drink_choice(True)
