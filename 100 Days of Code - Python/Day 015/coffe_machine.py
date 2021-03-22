@@ -61,19 +61,15 @@ def process_coins():
 
 
 def payment(drink):
-    try:
-        value = process_coins()
-        drinks_value = MENU[drink]["cost"]
-        if drinks_value <= value:
-            print(f"Your change is $ { value - drinks_value}")
-            return True
-        else:
-            return False
-    except:
-        print("Invalid payment")
-        drink_choice()
-        
+    value = process_coins()
+    drinks_value = MENU[drink]["cost"]
+    if drinks_value <= value:
+        print(f"Your change is $ { value - drinks_value}")
+        return True
+    else:
+        return False
 
+        
 
 def drink_choice(choice):
     if choice:
