@@ -30,10 +30,10 @@ class Snake:
     def update_head(self):
         self.head_x = self.head.xcor()
         self.head_y = self.head.ycor()
-    
+
     def snake_update(self):
-        snake_x = self.segments[len(self.segments) - 1].xcor()
-        snake_y = self.segments[len(self.segments) - 1].ycor()
+        snake_x = self.segments[- 1].xcor()
+        snake_y = self.segments[- 1].ycor()
         for i in range(len(self.segments) - 1, 0, -1):
             snake_x = self.segments[i - 1].xcor()
             snake_y = self.segments[i - 1].ycor()
@@ -54,7 +54,7 @@ class Snake:
             same_position = True
         else:
             for i in range(1,len(self.segments)):
-                if self.segments[i].pos() == (self.head_x, self.head_y):
+                if self.head.distance(self.segments[i]) <= 10:
                     same_position = True
         return same_position
 
