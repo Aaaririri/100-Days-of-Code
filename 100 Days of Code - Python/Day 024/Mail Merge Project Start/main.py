@@ -10,7 +10,6 @@
 
 lines = open("Day 024/Mail Merge Project Start/Input/Names/invited_names.txt", mode ="r")
 names = lines.readlines()
-print(names)
 
 
 letter = open("Day 024/Mail Merge Project Start/Input/Letters/starting_letter.txt", mode ="r")
@@ -22,7 +21,6 @@ for name in names:
     path = f"Day 024/Mail Merge Project Start/Output/ReadyToSend/{txt}.txt"
     with open(path, mode ="w") as text:
         text.write(original_letter.replace(anterior_name, txt))
-        anterior_name = txt
 
 letter.close()
 lines.close()
