@@ -8,20 +8,21 @@
         #Hint3: THis method will help you: https://www.w3schools.com/python/ref_string_strip.asp
 
 
-with open("Day 024/Mail Merge Project Start/Input/Names/invited_names.txt", mode ="r") as lines:
-    names = lines.readlines()
+lines = open("Day 024/Mail Merge Project Start/Input/Names/invited_names.txt", mode ="r")
+names = lines.readlines()
+print(names)
 
 
-with open("Day 024/Mail Merge Project Start/Input/Letters/starting_letter.txt", mode ="r") as letter:
-    original_letter = letter.read()
+letter = open("Day 024/Mail Merge Project Start/Input/Letters/starting_letter.txt", mode ="r")
+original_letter = letter.read()
 
 for name in names:
     txt = name.strip("\n")
+    anterior_name = "[name]"
     path = f"Day 024/Mail Merge Project Start/Output/ReadyToSend/{txt}.txt"
     with open(path, mode ="w") as text:
-        text.write(original_letter)
-    with open(path, mode ="r") as text:
-        new_text = text.read()   
-    new_text.replace("[name]", txt)
-    with open(path, mode ="w") as text:
-        text.write(new_text)
+        text.write(original_letter.replace(anterior_name, txt))
+        anterior_name = txt
+
+letter.close()
+lines.close()
