@@ -1,5 +1,11 @@
 import pandas as pd
 from turtle import Screen, Turtle
+"""
+def get_mouse_click_coor(x, y):
+    print(x, y)
+turtle.onscreenclick(get_mouse_click_coor)
+turtle.mainloop()
+"""
 #organazing data
 data = pd.read_csv("Day 025/us-states-game-start/50_states.csv", index_col = 0)
 data = data.to_dict()
@@ -19,6 +25,7 @@ for names, values in new_dict.items():
 
 #setting screen 
 screen = Screen()
+screen.title("US MAP")
 screen.bgpic("Day 025/us-states-game-start/blank_states_img.gif")
 pen = Turtle()
 pen.hideturtle()
