@@ -31,26 +31,31 @@ class Interface:
         self.window.mainloop()
     
     def get_next_question(self):
-        q_text = self.quiz.next_question()    
-        self.canvas.itemconfig(self.question_text,text = q_text)
-    
+        self.canvas.config(bg = "white")
+        if self.quiz.still_has_questions():
+            q_text = self.quiz.next_question()    
+            self.canvas.itemconfig(self.question_text,text = q_text)
+        else:
+            self.canvas.itemconfig(self.question_text,text = "End of The Game")
+            
     def set_score(self):
         score_text = self.quiz.get_score()
         self.score_label.config(text = f"Score{score_text}")
         
     def true_check(self):
-        if self.quiz.still_has_questions():
-            self.quiz.check_answer("True")
-            self.get_next_question()
-            self.set_score() 
+        if self.quiz.check_answer("True"):
+            self.canvas.config(bg = "green")
         else:
-            self.canvas.itemconfig(self.question_text,text = "End of The Game")
+            self.canvas.config(bg = "red")
+        self.window.after(1000, self.get_next_question)
+        self.set_score()
             
     def false_check(self):
-        if self.quiz.still_has_questions():
-            self.quiz.check_answer("False")
-            self.get_next_question()
-            self.set_score() 
+        if self.quiz.check_answer("False"):
+            self.canvas.config(bg = "green")
         else:
-            self.canvas.itemconfig(self.question_text,text = "End of The Game")
+            self.canvas.config(bg = "red")
+        self.window.after(1000, self.get_next_question)
+        self.set_score() 
+    
             

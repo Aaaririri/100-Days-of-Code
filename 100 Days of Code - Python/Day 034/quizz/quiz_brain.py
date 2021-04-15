@@ -19,6 +19,8 @@ class QuizBrain:
         correct_answer = self.current_question.answer
         if user_answer == correct_answer:
             self.score += 1
-
+            return True
+        return False
+    
     def get_score(self):
         return self.score
