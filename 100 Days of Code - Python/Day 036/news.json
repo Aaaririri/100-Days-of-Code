@@ -1,0 +1,58 @@
+{
+    "status": "ok",
+    "totalResults": 4,
+    "articles": [
+        {
+            "source": {
+                "id": null,
+                "name": "Yahoo Entertainment"
+            },
+            "author": "Rideshare Rental, Inc.",
+            "title": "EVmo, Inc Announces Delivery of its first Fleet of Tesla Vehicles Under Its Fleet Partnership with Tesla",
+            "description": "Telsa Fleet Partnership is part of Strategy to become the first U.S. Ride Share Company with an all-EV Fleet.Ahead of Schedule in Converting its Ride Share...",
+            "url": "https://finance.yahoo.com/news/evmo-inc-announces-delivery-first-113000766.html",
+            "urlToImage": "https://s.yimg.com/uu/api/res/1.2/3ibCzFjAoG3BnQaRP1VEGA--~B/aD0yMDM7dz00NDg7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/globenewswire.com/95c0bcee984c12acebf9026ddd70a296",
+            "publishedAt": "2021-03-25T11:30:00Z",
+            "content": "<ul><li>Telsa Fleet Partnership is part of Strategy to become the first U.S. Ride Share Company with an all-EV Fleet.\r\n</li><li>Ahead of Schedule in Converting its Ride Share Fleet to all EV by end o\u2026 [+8201 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Yahoo Entertainment"
+            },
+            "author": "PR Newswire",
+            "title": "T4L, Inc. - Over 267 Investors Enthusiastically Investing in a Startup Business That Provides an All-Inclusive Subscription Service to Electric Vehicles Like Tesla",
+            "description": "T4L, Inc. today announced that their equity crowdfund campaign on https://wefunder.com/t4l has raised over $143,951 from over 267 investors. T4L has received...",
+            "url": "https://finance.yahoo.com/news/t4l-inc-over-267-investors-123100651.html",
+            "urlToImage": "https://s.yimg.com/uu/api/res/1.2/OTeNEl5FqG2sTZsQWxLxgg--~B/aD00MDA7dz00MDA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/prnewswire.com/ba6c717822d6bb8568e458229f0b7714",
+            "publishedAt": "2021-04-07T12:31:00Z",
+            "content": "NAPLES, Fla., April 7, 2021 /PRNewswire/ -- T4L, Inc. today announced that their equity crowdfund campaign on https://wefunder.com/t4l has raised over $143,951 from over 267 investors. T4L has receiv\u2026 [+2437 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Business Standard"
+            },
+            "author": "Reuters",
+            "title": "Tesla Inc posts record deliveries in first quarter, beats estimates",
+            "description": "Tesla Inc on Friday posted record deliveries for the January to March quarter, beating Wall Street estimates, as solid demand offset the impact of a global shortage of parts.",
+            "url": "https://www.business-standard.com/article/international/tesla-inc-posts-record-deliveries-in-first-quarter-beats-estimates-121040200949_1.html",
+            "urlToImage": "https://bsmedia.business-standard.com/_media/bs/img/article/2021-02/09/full/1612818013-7128.jpg",
+            "publishedAt": "2021-04-02T14:13:51Z",
+            "content": "(Reuters) - Tesla Inc on Friday posted record deliveries for the January to March quarter, beating Wall Street estimates, as solid demand offset the impact of a global shortage of parts.\r\n\"We are enc\u2026 [+2659 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "PRNewswire"
+            },
+            "author": null,
+            "title": "T4L, Inc. - Over 267 Investors Enthusiastically Investing in a Startup Business That Provides an All-Inclusive Subscription Service to Electric Vehicles Like Tesla",
+            "description": "NAPLES, Fla., April 7, 2021 /PRNewswire/ -- T4L, Inc. today announced that their equity crowdfund campaign on https://wefunder.com/t4l has raised over $143,951 from over 267 investors. T4L has received great feedback and endorsements from their early-stage eq\u2026",
+            "url": "https://www.prnewswire.com/news-releases/t4l-inc--over-267-investors-enthusiastically-investing-in-a-startup-business-that-provides-an-all-inclusive-subscription-service-to-electric-vehicles-like-tesla-301263471.html",
+            "urlToImage": "https://mma.prnewswire.com/media/1481889/T4L.jpg?p=facebook",
+            "publishedAt": "2021-04-07T12:31:00Z",
+            "content": "NAPLES, Fla., April 7, 2021 /PRNewswire/ --\u00a0T4L, Inc. today announced that their equity crowdfund campaign on https://wefunder.com/t4l\u00a0has raised over $143,951 from over 267 investors.\u00a0T4L has receiv\u2026 [+2125 chars]"
+        }
+    ]
+}
