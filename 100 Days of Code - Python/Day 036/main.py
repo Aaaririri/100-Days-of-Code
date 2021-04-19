@@ -4,7 +4,7 @@ COMPANY_NAME = "Tesla Inc"
 Links:
 https://www.alphavantage.co/
 https://newsapi.org/docs/endpoints/everything
-you need to get keys for the apis 
+you need to get keys for the apis for STOCK_API_KEY and NEWS_API_KEY
 and change the emails for yours 
 change your_email and your_password and your_reciver for your own date 
 this is a tesla stocks news tracker to send via email news about the stocks in case of hight variation
@@ -12,8 +12,8 @@ only on weekdays
 """
 STOCK_ENDPOINT = "https://www.alphavantage.co/query"
 NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
-STOCK_API_KEY = " N1U285ZQOSSFDA53"
-NEWS_API_KEY = "dc9052570a9d49b7973a847c91eb256d"
+STOCK_API_KEY = ""
+NEWS_API_KEY = ""
 
 import requests 
 import datetime
