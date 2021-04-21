@@ -1,5 +1,9 @@
 """
 change info set with MY_ to your own info or set your own environment variables for this variables
+https://www.nutritionix.com/business/api
+https://sheety.co/
+sheety updates your exercise data calculated using nutritionix api to a google sheet
+the google sheet have date, time, exercise, duration and calories as columns
 """
 APP_ID = MY_APP_ID
 API_KEY = MY_API_KEY
@@ -38,7 +42,7 @@ data = response.json()
 today_date = datetime.now().strftime("%d/%m/%Y")
 today_time = datetime.now().strftime("%X")
 
-sheety_endpoint = "https://api.sheety.co/d2ccf30f76084afe96e8da0ee8c275aa/myWorkouts/workouts"
+sheety_endpoint = MY_ENDPOINT
 
 for exercise in data["exercises"]:
     sheety_params = {
