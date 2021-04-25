@@ -10,6 +10,7 @@ class FlightSearch:
         self.headers = {
             "apikey": TEQUILA_API_KEY
         }
+
     def get_destination_code(self, city_name):
         params = {
             "term": city_name,
@@ -21,8 +22,8 @@ class FlightSearch:
         code = response[0]["code"]
         return code
 
-    def check_flights(self, origin_city_code, destination_city_code, from_time, to_time):
-        query = {
+    def check_flights(self, origin_city_code=None, destination_city_code=None, from_time=None, to_time=None):
+        check_query = {
             "fly_from": origin_city_code,
             "fly_to": destination_city_code,
             "date_from": from_time.strftime("%d/%m/%Y"),
@@ -35,26 +36,23 @@ class FlightSearch:
             "curr": "GBP"
         }
 
-        response = requests.get(
-            url=f"{TEQUILA_ENDPOINT}/v2/search",
-            headers=self.headers,
-            params=query,
-        )
+        response = requests.get(url=f"{TEQUILA_ENDPOINT}/v2/search", headers=self.headers, params=check_query)
+        response.raise_for_status()
 
         try:
-            data = response.json()["data"][0]
+            result = response.json()["data"][0]
         except IndexError:
-            print(f"No flights found for {destination_city_code}.")
+            print(f"There are no flights found for {check_query['fly_to']}.")
             return None
 
         flight_data = FlightData(
-            price=data["price"],
-            origin_city=data["route"][0]["cityFrom"],
-            origin_airport=data["route"][0]["flyFrom"],
-            destination_city=data["route"][0]["cityTo"],
-            destination_airport=data["route"][0]["flyTo"],
-            out_date=data["route"][0]["local_departure"].split("T")[0],
-            return_date=data["route"][1]["local_departure"].split("T")[0]
+            price=result["price"],
+            city=result["route"][0]["cityFrom"],
+            airport=result["route"][0]["flyFrom"],
+            destination_city=result["route"][0]["cityTo"],
+            destination_airport=result["route"][0]["flyTo"],
+            date=result["route"][0]["local_departure"].split("T")[0],
+            return_date=result["route"][1]["local_departure"].split("T")[0]
         )
         print(f"{flight_data.destination_city}: £{flight_data.price}")
         return flight_data

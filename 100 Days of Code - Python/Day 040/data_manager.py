@@ -14,7 +14,6 @@ class DataManager:
         self.destination_data = data["prices"]
         return self.destination_data
 
-
     def update_destination_codes(self):
         for city in self.destination_data:
             new_data = {
